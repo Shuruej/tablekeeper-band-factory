@@ -3,7 +3,8 @@ WORKDIR /service
 COPY app ./app
 COPY tools ./tools
 COPY vendor ./vendor
+COPY demo_entry.py ./demo_entry.py
 ENV PYTHONPATH=/service/vendor
 ENV PYTHONUNBUFFERED=1
 EXPOSE 8080
-CMD ["python", "-m", "app.server"]
+CMD ["python", "demo_entry.py"]
