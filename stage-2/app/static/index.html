@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f0e6">
+  <title>Tablekeeper — Your table awaits</title>
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="wordmark" href="/" aria-label="Tablekeeper home"><span class="mark">✦</span> Tablekeeper</a>
+      <nav aria-label="Main navigation"><a href="/">Find a table</a><a href="/lookup">My reservation</a><a id="login-link" href="/login">Log in</a><a id="signup-link" class="nav-join" href="/signup">Join us</a><span id="current-user" data-testid="current-user" hidden></span><button id="logout-button" data-testid="logout-button" type="button" hidden>Log out</button></nav>
+    </div>
+  </header>
+  <main class="shell">
+    <section id="home-screen" class="screen" hidden>
+      <div class="hero"><div><p class="eyebrow">A GOOD EVENING BEGINS HERE</p><h1>Make room for <em>the moment.</em></h1><p class="lead">Discover a welcoming table, choose your time, and leave the details to us.</p></div><div class="hero-symbol" aria-hidden="true"><span>✦</span><small>GOOD FOOD · GOOD COMPANY</small></div></div>
+      <section class="panel search-panel" aria-labelledby="search-title"><div class="section-heading"><div><p class="eyebrow">YOUR EVENING</p><h2 id="search-title">Find your table</h2></div><p>Thoughtful places, simple plans.</p></div>
+        <form id="search-form" class="search-fields"><label>Restaurant<select data-testid="restaurant-select" id="restaurant-select" required></select></label><label>Date<input data-testid="date-input" id="date-input" type="date" required></label><label>Guests<input data-testid="party-size-input" id="party-size-input" type="number" min="1" value="2" required></label><button data-testid="search-button" id="search-button" class="button primary" type="submit">See available tables <span aria-hidden="true">→</span></button></form>
+      </section>
+      <section class="results-section" aria-live="polite"><div class="section-heading"><div><p class="eyebrow">THE POSSIBILITIES</p><h2 id="results-title">Your seating options</h2></div><p id="results-context">Select a restaurant and date to begin.</p></div><div id="search-status" class="status-note">A lovely table is just a search away.</div><div id="availability-grid" class="availability-grid" hidden></div><p id="no-slots" data-testid="no-slots" class="status-note" hidden>No sittings are available that day. Try another date.</p></section>
+      <section id="booking-form" data-testid="booking-form" class="panel booking-panel" hidden><div><p class="eyebrow">ALMOST THERE</p><h2>Reserve your place</h2><p id="booking-summary" data-testid="booking-summary" class="booking-summary"></p></div><form id="booking-form-inner"><label>Guests<input id="booking-party-size" data-testid="booking-party-size" type="number" min="1" required></label><button class="button primary" id="booking-submit" data-testid="booking-submit" type="submit">Confirm booking</button></form><div id="booking-feedback" aria-live="polite"></div><div id="confirmation" data-testid="confirmation" class="confirmation" hidden><p class="eyebrow">IT'S A DATE</p><h3>Your table is confirmed.</h3><p class="confirmation-code">Reference <strong id="confirmation-reference" data-testid="confirmation-reference"></strong></p><p id="confirmation-details" data-testid="confirmation-details"></p><p id="confirmation-tables" data-testid="confirmation-tables"></p><a href="/lookup">View your reservation →</a></div></section>
+    </section>
+    <section id="signup-screen" class="screen narrow" hidden><p class="eyebrow">A SEAT AT THE TABLE</p><h1>Join us.</h1><p class="lead">Your next lovely evening starts with a few details.</p><form id="signup-form" class="panel account-panel"><label>Your name<input data-testid="signup-display-name" name="display_name" autocomplete="name" required></label><label>Email address<input data-testid="signup-email" name="email" type="email" autocomplete="email" required></label><label>Password<input data-testid="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" required></label><button data-testid="signup-submit" class="button primary" type="submit">Create account</button><div id="signup-feedback" aria-live="polite"></div></form><p class="supporting">Already have an account? <a href="/login">Log in</a></p></section>
+    <section id="login-screen" class="screen narrow" hidden><p class="eyebrow">WELCOME BACK</p><h1>Your table awaits.</h1><p class="lead">Log in to keep your reservations close.</p><form id="login-form" class="panel account-panel"><label>Email address<input data-testid="login-email" name="email" type="email" autocomplete="email" required></label><label>Password<input data-testid="login-password" name="password" type="password" autocomplete="current-password" required></label><button data-testid="login-submit" class="button primary" type="submit">Log in</button><div id="login-feedback" aria-live="polite"></div></form><p class="supporting">New to Tablekeeper? <a href="/signup">Create an account</a></p></section>
+    <section id="lookup-screen" class="screen narrow" hidden><p class="eyebrow">YOUR PLANS, AT A GLANCE</p><h1>Find your reservation.</h1><p class="lead">Enter the reference from your confirmation to see the details.</p><form id="lookup-form" class="panel account-panel"><label>Reservation reference<input data-testid="lookup-reference-input" id="lookup-reference-input" autocomplete="off" required></label><button data-testid="lookup-submit" class="button primary" type="submit">Find reservation</button></form><div id="lookup-feedback" aria-live="polite"></div><section id="reservation-detail" data-testid="reservation-detail" class="panel detail-panel" hidden><p class="eyebrow">YOUR RESERVATION</p><div class="detail-top"><h2 id="detail-reference"></h2><span id="reservation-status" data-testid="reservation-status" class="status-pill"></span></div><p id="detail-time"></p><p id="reservation-tables" data-testid="reservation-tables"></p><button id="reservation-cancel-button" data-testid="reservation-cancel-button" class="button secondary" type="button">Cancel reservation</button></section></section>
+  </main>
+  <footer class="site-footer"><div class="shell"><span>Tablekeeper</span><span>Good company is always in season.</span></div></footer>
+</body>
+</html>
